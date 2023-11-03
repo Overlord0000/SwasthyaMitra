@@ -82,21 +82,23 @@ public class UserProfileActivity extends AppCompatActivity {
         });
 
 
+
+
     }
 
     private void showImageChooserDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Choose Image Source");
 
-        // Add options for camera and gallery
+
         builder.setItems(new CharSequence[]{"Camera", "Gallery"}, (dialog, which) -> {
             switch (which) {
                 case 0:
-                    // Open the camera
+
                     openCamera();
                     break;
                 case 1:
-                    // Open the gallery
+
                     openGallery();
                     break;
             }
