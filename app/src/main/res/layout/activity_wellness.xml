@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".WellnessActivity">
@@ -20,7 +21,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView1"
+                android:id="@+id/Nutrition_and_Diet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -38,7 +39,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nutrition and Diet"
+                        android:text="Nutrition &amp; Diet"
                         android:textSize="18sp"
                         android:textColor="@android:color/black" />
 
@@ -49,7 +50,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView2"
+                android:id="@+id/Mental_Health_and_Mindfulness"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -66,7 +67,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mental Health and Mindfulness:"
+                        android:text="Mental Health &amp; Mindfulness"
                         android:textSize="18sp"
                         android:textColor="@android:color/black" />
 
@@ -75,7 +76,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView3"
+                android:id="@+id/Fitness_and_Exercise"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -92,7 +93,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fitness and Exercise"
+                        android:text="Fitness &amp; Exercise"
                         android:textSize="18sp"
                         android:textColor="@android:color/black" />
 
@@ -102,7 +103,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView4"
+                android:id="@+id/General_Health_Information"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -119,7 +120,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="General Health Information:"
+                        android:text="General Health Information"
                         android:textSize="18sp"
                         android:textColor="@android:color/black" />
 
@@ -128,7 +129,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView5"
+                android:id="@+id/Sleep_and_Sleep_Disorders"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -145,7 +146,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sleep and Sleep Disorders"
+                        android:text="Sleep &amp; Sleep Disorders"
                         android:textSize="18sp"
                         android:textColor="@android:color/black" />
 
@@ -154,7 +155,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView6"
+                android:id="@+id/Weight_Management"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -181,7 +182,8 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView7"
+                android:id="@+id/Medical_News_and_Updates"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -198,7 +200,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Medical News and Updates"
+                        android:text="Medical News &amp; Updates"
                         android:textSize="18sp"
                         android:textColor="@android:color/black" />
 
@@ -208,7 +210,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView8"
+                android:id="@+id/Parenting_and_Child_Health"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -225,7 +227,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Parenting and Child Health"
+                        android:text="Parenting &amp; Child Health"
                         android:textSize="18sp"
                         android:textColor="@android:color/black" />
 
@@ -235,7 +237,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView9"
+                android:id="@+id/Womens_Health"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
