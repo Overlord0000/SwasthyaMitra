@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/regback">
+
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="570dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/glass_morph">
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="570dp"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="Register"
+                android:textColor="#000000"
+                android:textSize="36sp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/etRegUsername"
+                android:layout_width="match_parent"
+                android:inputType="text"
+                android:layout_height="39dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/input_bg"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:drawablePadding="5dp"
+                android:hint="Username"
+                android:paddingLeft="15dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/etRegPassword"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/input_bg"
+                android:drawableLeft="@drawable/ic_baseline_security_24"
+                android:drawablePadding="5dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="15dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/etRegPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/input_bg"
+                android:drawableLeft="@drawable/ic_baseline_security_24"
+                android:drawablePadding="5dp"
+                android:hint="confirm Password"
+                android:inputType="textPassword"
+                android:paddingLeft="15dp"
+                tools:ignore="TouchTargetSizeCheck" />
+            <TextView
+                android:id="@+id/tvQuestion1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="what is your Mother's name "
+                android:paddingTop="5dp"/>
+
+            <EditText
+                android:id="@+id/etRegQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:background="@drawable/input_bg"
+                android:drawableLeft="@drawable/answer2"
+                android:drawablePadding="5dp"
+                android:hint="Your Answer"
+                android:inputType="text"
+                android:paddingLeft="15dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Register"/>
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already a User? Login"/>
+
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

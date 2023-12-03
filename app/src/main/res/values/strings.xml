@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">SwasthyaMitra</string>
+
+
+    <string-array name="blood_groups">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+
+
+    <string-array name="allergy_types">
+        <item>Food Allergy</item>
+        <item>Drug Allergy</item>
+        <item>Environmental Allergy</item>
+        <item>Insect Allergy</item>
+    </string-array>
+
+
+    <string-array name="spinnerSeverity">
+        <item>Mild</item>
+        <item>Moderate</item>
+        <item>Severe</item>
+
+    </string-array>
+</resources>
