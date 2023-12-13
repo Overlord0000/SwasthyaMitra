@@ -5,8 +5,16 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:paddingLeft="10dp"
-    tools:context=".UserProfileActivity"
-    >
+    tools:context=".UserProfileActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
     <ImageView
@@ -15,7 +23,7 @@
         android:layout_height="100dp"
         android:layout_marginLeft="140dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/input_bg"
+        android:background="@drawable/profile_bg"
         android:clickable="true"
         android:contentDescription="profile pic"
         android:onClick="openImageChooser" />
@@ -113,26 +121,32 @@
         android:textSize="17dp"
         android:layout_marginBottom="10dp" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="39dp"
-        tools:context=".UserProfileActivity"
->
-    <Spinner
-        android:id="@+id/spinnerBloodGroup"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/input_bg"
-        tools:ignore="TouchTargetSizeCheck" />
-    </ScrollView>
+
+            <Spinner
+                android:id="@+id/spinnerBloodGroup"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_bg"
+                tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:layout_marginLeft="145dp"
         android:layout_marginBottom="20dp" />
+
+
+            <Button
+                android:id="@+id/buttonUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update"
+
+                android:layout_marginBottom="20dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

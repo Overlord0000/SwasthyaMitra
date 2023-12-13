@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/allerges_back"
+    tools:context=".AllergiesActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-6dp"
+        android:layout_marginTop="-2dp"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Allergy Type -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Type of Allergy:"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerAllergyType"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg" />
+
+            <!-- Severity -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Severity:"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSeverity"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@drawable/input_bg"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Allergen -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Allergen:"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTextAllergen"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Specific Allergen"
+                android:background="@drawable/input_bg"
+                android:inputType="text" />
+
+            <!-- Symptoms -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Symptoms:"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTextSymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rectangle"
+                android:hint="Describe Symptoms"
+                android:inputType="text" />
+
+            <!-- Date of Onset -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Date of Onset:"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTextDateOfOnset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:focusable="false"
+                android:background="@drawable/input_bg"
+                android:hint="Select Date of Onset"
+                android:inputType="none" />
+
+            <Button
+                android:id="@+id/buttonSaveAllergy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Allergy" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

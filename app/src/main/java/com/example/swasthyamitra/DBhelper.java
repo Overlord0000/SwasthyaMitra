@@ -18,6 +18,7 @@ public class DBhelper extends SQLiteOpenHelper {
     public static final String COLUMN_IMAGE = "image";
     public static final String COLUMN_USERNAME = "username";
     public static final String COLUMN_AGE = "age";
+    public static final String COLUMN_DOB = "dob";
     public static final String COLUMN_EMERGENCY_CONTACT = "emergency_contact";
     public static final String COLUMN_ADDRESS = "address";
     public static final String COLUMN_GENDER = "gender";
@@ -108,5 +109,23 @@ public class DBhelper extends SQLiteOpenHelper {
         else
             return false;
 
+    }
+
+
+    public void insertUserProfile(String username, int age, String dob, String emergencyContact, String address, String gender, String bloodGroup, String imageUri) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USERNAME, username);
+        values.put(COLUMN_AGE, age);
+        values.put(COLUMN_DOB, dob);
+        values.put(COLUMN_EMERGENCY_CONTACT, emergencyContact);
+        values.put(COLUMN_ADDRESS, address);
+        values.put(COLUMN_GENDER, gender);
+        values.put(COLUMN_BLOOD_GROUP, bloodGroup);
+        values.put(COLUMN_IMAGE, imageUri);
+
+        long newRowId = db.insert(USER_PROFILE_TABLE, null, values);
     }
 }

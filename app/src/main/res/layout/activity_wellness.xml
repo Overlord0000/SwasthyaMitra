@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/wellnes_back"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".WellnessActivity">
@@ -25,14 +25,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/gradient1"
                     android:orientation="vertical"
+
                     android:padding="16dp">
 
 
@@ -40,9 +42,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Nutrition &amp; Diet"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/black" />
-
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>
@@ -54,13 +55,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/gradient2"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -68,8 +70,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Mental Health &amp; Mindfulness"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>
@@ -80,13 +82,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/gradient3"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -94,8 +97,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Fitness &amp; Exercise"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>
@@ -107,13 +110,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/gradient4"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -121,8 +125,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="General Health Information"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>
@@ -133,13 +137,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/gradient5"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -147,8 +152,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sleep &amp; Sleep Disorders"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>
@@ -159,13 +164,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/gradient6"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -173,8 +179,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Weight Management"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>
@@ -187,13 +193,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/gradient7"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -201,8 +208,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Medical News &amp; Updates"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>
@@ -214,13 +221,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/gradient8"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -228,8 +236,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Parenting &amp; Child Health"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>
@@ -241,13 +249,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/gradient9"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -255,8 +264,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Women's Health"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>
