@@ -1,8 +1,5 @@
 package com.example.swasthyamitra;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -10,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -17,25 +15,27 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.Calendar;
 
 public class UserProfileActivity extends AppCompatActivity {
 
-    ImageView ProfilePic;
-    EditText EdName, EdAge, EdDOb, EdEmergencyContact, EdAddress;
-    RadioButton btnMale, btnFemale;
-    Spinner SpinBloodGroup;
-    Button btnSave;
+    private ImageView profilePic;
+    private EditText edName, edAge, edDob, edEmergencyContact, edAddress;
+    private RadioButton btnMale, btnFemale;
+    private Spinner spinBloodGroup;
+    private Button btnSave;
 
-    String[] bloodGroups;
-    DBhelper DB;
+    private String[] bloodGroups;
+    private DBhelper dbHelper;
 
     private Uri userProfilePictureUri;
 
@@ -49,63 +49,28 @@ public class UserProfileActivity extends AppCompatActivity {
 
         bloodGroups = getResources().getStringArray(R.array.blood_groups);
 
-        ProfilePic = (ImageView) findViewById(R.id.ProfilePicture);
-        EdName = (EditText) findViewById(R.id.EditName);
-        EdAge = (EditText) findViewById(R.id.EditAge);
-        EdDOb = (EditText) findViewById(R.id.EditDOB);
-        EdEmergencyContact = (EditText) findViewById(R.id.EditEmergencyContact);
-        EdAddress = (EditText) findViewById(R.id.EditAddress);
-        SpinBloodGroup = (Spinner) findViewById(R.id.spinnerBloodGroup);
-        btnSave = (Button) findViewById(R.id.buttonSave);
-        btnMale = (RadioButton) findViewById(R.id.radioButtonMale);
-        btnFemale = (RadioButton) findViewById(R.id.radioButtonFemale);
+        profilePic = findViewById(R.id.ProfilePicture);
+        edName = findViewById(R.id.EditName);
+        edAge = findViewById(R.id.EditAge);
+        edDob = findViewById(R.id.EditDOB);
+        edEmergencyContact = findViewById(R.id.EditEmergencyContact);
+        edAddress = findViewById(R.id.EditAddress);
+        spinBloodGroup = findViewById(R.id.spinnerBloodGroup);
+        btnSave = findViewById(R.id.buttonSave);
+        btnMale = findViewById(R.id.radioButtonMale);
+        btnFemale = findViewById(R.id.radioButtonFemale);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, bloodGroups);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        SpinBloodGroup.setAdapter(adapter);
+        spinBloodGroup.setAdapter(adapter);
 
-        DB = new DBhelper(this);
+        dbHelper = new DBhelper(this);
 
-        ProfilePic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showImageChooserDialog();
-            }
-        });
+        profilePic.setOnClickListener(v -> showImageChooserDialog());
 
-        EdDOb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePickerDialog();
-            }
-        });
+        edDob.setOnClickListener(v -> showDatePickerDialog());
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-                String userName = EdName.getText().toString();
-                int userAge = Integer.parseInt(EdAge.getText().toString());
-                String userDateOfBirth = EdDOb.getText().toString();
-                String userEmergencyContact = EdEmergencyContact.getText().toString();
-                String userAddress = EdAddress.getText().toString();
-                String userGender = btnMale.isChecked() ? "Male" : (btnFemale.isChecked() ? "Female" : "");
-                String userBloodGroup = SpinBloodGroup.getSelectedItem().toString();
-
-
-                if (userProfilePictureUri != null) {
-
-                  DB.insertUserProfile(userName, userAge, userDateOfBirth, userEmergencyContact, userAddress, userGender, userBloodGroup, userProfilePictureUri.toString());
-                  Toast.makeText(UserProfileActivity.this, "User profile saved", Toast.LENGTH_SHORT).show();
-
-                } else {
-
-                    Toast.makeText(UserProfileActivity.this, "Please select a profile picture", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        btnSave.setOnClickListener(v -> saveUserProfile());
     }
 
     private void showImageChooserDialog() {
@@ -144,31 +109,42 @@ public class UserProfileActivity extends AppCompatActivity {
 
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_IMAGE_CAPTURE) {
-
                 Bundle extras = data.getExtras();
-                Bitmap imageBitmap = (Bitmap) extras.get("data");
-                userProfilePictureUri = null; //reset uri
-                Glide.with(this)
-                        .load(imageBitmap)
-                        .apply(new RequestOptions()
-                                .centerCrop()
-                                .circleCrop()
-                                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                                .skipMemoryCache(true))
-                        .into(ProfilePic);
+                if (extras != null) {
+                    Bitmap imageBitmap = (Bitmap) extras.get("data");
+                    userProfilePictureUri = null; // reset uri
+                    loadImageIntoImageView(imageBitmap);
+                }
             } else if (requestCode == REQUEST_IMAGE_PICK) {
                 // Handle the selected image from the gallery
-                userProfilePictureUri = data.getData();
-                Glide.with(this)
-                        .load(userProfilePictureUri)
-                        .apply(new RequestOptions()
-                                .centerCrop()
-                                .circleCrop()
-                                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                                .skipMemoryCache(true))
-                        .into(ProfilePic);
+                if (data != null && data.getData() != null) {
+                    userProfilePictureUri = data.getData();
+                    loadImageIntoImageView(userProfilePictureUri);
+                }
             }
         }
+    }
+
+    private void loadImageIntoImageView(Bitmap bitmap) {
+        Glide.with(this)
+                .load(bitmap)
+                .apply(new RequestOptions()
+                        .centerCrop()
+                        .circleCrop()
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .skipMemoryCache(true))
+                .into(profilePic);
+    }
+
+    private void loadImageIntoImageView(Uri uri) {
+        Glide.with(this)
+                .load(uri)
+                .apply(new RequestOptions()
+                        .centerCrop()
+                        .circleCrop()
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .skipMemoryCache(true))
+                .into(profilePic);
     }
 
     private void showDatePickerDialog() {
@@ -185,11 +161,25 @@ public class UserProfileActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            String selectedDate = String.format("%02d/%02d/%02d", dayOfMonth, month + 1, year % 100);
-            EdDOb.setText(selectedDate);
-        }
+    private final DatePickerDialog.OnDateSetListener dateSetListener = (view, year, month, dayOfMonth) -> {
+        String selectedDate = String.format("%02d/%02d/%02d", dayOfMonth, month + 1, year % 100);
+        edDob.setText(selectedDate);
     };
+
+    private void saveUserProfile() {
+        String userName = edName.getText().toString();
+        int userAge = Integer.parseInt(edAge.getText().toString());
+        String userDateOfBirth = edDob.getText().toString();
+        String userEmergencyContact = edEmergencyContact.getText().toString();
+        String userAddress = edAddress.getText().toString();
+        String userGender = btnMale.isChecked() ? "Male" : (btnFemale.isChecked() ? "Female" : "");
+        String userBloodGroup = spinBloodGroup.getSelectedItem().toString();
+
+        if (userProfilePictureUri != null) {
+            dbHelper.insertUserProfile(userName, userAge, userDateOfBirth, userEmergencyContact, userAddress, userGender, userBloodGroup, userProfilePictureUri.toString());
+            Toast.makeText(UserProfileActivity.this, "User profile saved", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(UserProfileActivity.this, "Please select a profile picture", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

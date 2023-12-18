@@ -1,0 +1,144 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:paddingLeft="10dp"
+    tools:context=".DisplayUserProfileActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/DisplayProfilePicture"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="140dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/profile_bg"
+                android:clickable="true"
+                android:contentDescription="profile pic"
+                android:onClick="openImageChooser" />
+
+            <EditText
+                android:id="@+id/DisplayEditName"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_bg"
+                android:hint="Name"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/DisplayEditAge"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_bg"
+                android:hint="Age"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+            <EditText
+                android:id="@+id/DisplayEditDOB"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_bg"
+                android:hint="Date of Birth"
+                android:onClick="showDatePicker"
+                android:inputType="date"
+                android:paddingLeft="10dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+            <EditText
+                android:id="@+id/DisplayEditEmergencyContact"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_bg"
+                android:hint="Emergency Contact"
+                android:inputType="phone"
+                android:paddingLeft="10dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/DisplayEditAddress"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rectangle"
+                android:hint="Address"
+                android:paddingLeft="10dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textSize="17dp"
+                />
+            <RadioGroup
+                android:id="@+id/DisplayradioGroupGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                >
+
+                <RadioButton
+                    android:id="@+id/DisplayradioButtonMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/DisplayradioButtonFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blood Group"
+                android:textSize="17dp"
+                android:layout_marginBottom="10dp" />
+
+
+            <Spinner
+                android:id="@+id/DisplayspinnerBloodGroup"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_bg"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/DisplaybuttonUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update"
+
+                android:layout_marginBottom="20dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -15,17 +15,17 @@
 
 
     <string-array name="allergy_types">
-    <item>Food Allergy</item>
-    <item>Drug Allergy</item>
-    <item>Environmental Allergy</item>
-    <item>Insect Allergy</item>
+        <item>Food Allergy</item>
+        <item>Drug Allergy</item>
+        <item>Environmental Allergy</item>
+        <item>Insect Allergy</item>
     </string-array>
 
 
     <string-array name="severity_levels">
-    <item>Mild</item>
-    <item>Moderate</item>
-    <item>Severe</item>
+        <item>Mild</item>
+        <item>Moderate</item>
+        <item>Severe</item>
 
-</string-array>
+    </string-array>
 </resources>

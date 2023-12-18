@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (user.equals("") || pass.equals("") || confpass.equals("") || answers.equals(""))
                     Toast.makeText(RegisterActivity.this, "Please Enter all fields", Toast.LENGTH_SHORT).show();
                 else if (pass.equals(confpass)) {
-                    Boolean checkuser = DB.checkusername(user);
+                    Boolean checkuser = DB.checkUsername(user);
                     if (checkuser == false) {
                         Boolean insert = DB.insertData(user, pass, answers);
                         if (insert == true) {

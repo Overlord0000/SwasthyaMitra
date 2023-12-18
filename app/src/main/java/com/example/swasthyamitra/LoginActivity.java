@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (user.equals("") || pass.equals(""))
                     Toast.makeText(LoginActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
                 else{
-                    Boolean checkuserpass = DB.checkusernamepassword(user,pass);
+                    Boolean checkuserpass = DB.checkUsernamePassword(user,pass);
                     if (checkuserpass == true){
                         Toast.makeText(LoginActivity.this, "Sign in Successful ", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);

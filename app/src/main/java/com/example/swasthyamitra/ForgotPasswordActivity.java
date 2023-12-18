@@ -40,12 +40,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 String connewpass = NewConformPassword.getText().toString();
                 String ans = ForgotAnswer.getText().toString();
 
-                Boolean checkuser = DB.checkusername(user);
+                Boolean checkuser = DB.checkUsername(user);
                 if (checkuser == true){
-                    Boolean checkans = DB.checkanswer(ans);
+                    Boolean checkans = DB.checkAnswer(ans);
                     if (checkans == true) {
                         if (newpass.equals(connewpass)){
-                            Boolean checkpasswordupdate = DB.updatepassword(user, newpass);
+                            Boolean checkpasswordupdate = DB.updatePassword(user, newpass);
                         if (checkpasswordupdate == true) {
                             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(intent);
