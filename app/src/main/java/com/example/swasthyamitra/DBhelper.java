@@ -173,4 +173,14 @@ public class DBhelper extends SQLiteOpenHelper {
 
         return result != -1;
     }
+
+    public boolean checkUserProfileExists() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + USER_PROFILE_TABLE, null);
+
+        boolean profileExists = cursor.moveToFirst();
+
+        cursor.close();
+        return profileExists;
+    }
 }

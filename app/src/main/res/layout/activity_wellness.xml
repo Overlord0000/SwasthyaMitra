@@ -34,7 +34,6 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/gradient1"
                     android:orientation="vertical"
-
                     android:padding="16dp">
 
 
@@ -151,9 +150,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+
                         android:text="Sleep &amp; Sleep Disorders"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
+                    <View
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="250dp"
+                        android:background="@drawable/spleep"/>
 
 
                 </LinearLayout>
